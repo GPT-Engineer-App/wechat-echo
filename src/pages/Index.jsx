@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Box, Container, VStack, HStack, Text, Input, IconButton, Avatar, Flex } from "@chakra-ui/react";
+import NavigationBar from "../components/NavigationBar";
 import { FaPaperPlane, FaSmile } from "react-icons/fa";
 
 const messagesData = [
@@ -21,11 +22,7 @@ const Index = () => {
 
   return (
     <Container maxW="container.md" height="100vh" display="flex" flexDirection="column" justifyContent="space-between" p={0}>
-      <Box bg="gray.100" p={4} borderBottom="1px solid" borderColor="gray.200">
-        <Text fontSize="xl" fontWeight="bold">
-          WeChat Clone
-        </Text>
-      </Box>
+      <NavigationBar />
       <VStack spacing={4} flex={1} overflowY="auto" p={4} bg="white">
         {messages.map((message) => (
           <Flex key={message.id} w="100%" justify={message.sender === "me" ? "flex-end" : "flex-start"}>
